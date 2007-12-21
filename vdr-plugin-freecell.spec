@@ -14,6 +14,7 @@ URL:		http://www.magoa.net/linux/index.php?view=freecell
 Source:		http://www.magoa.net/linux/files/vdr-%plugin-%version.tar.bz2
 Patch0:		vdr-cardgames-0.0.2-to-gcc3.4.diff
 Patch1:		vdr-freecell-0.0.2-time.patch
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.4.1-6
 Requires:	vdr-abi = %vdr_abi
 
