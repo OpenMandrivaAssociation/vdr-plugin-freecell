@@ -1,0 +1,12 @@
+diff -Nurp freecell-0.0.2-old/cards.c freecell-0.0.2/cards.c
+--- freecell-0.0.2-old/cards.c	2004-08-14 15:02:55.000000000 +0300
++++ freecell-0.0.2/cards.c	2005-01-24 20:19:01.000000000 +0200
+@@ -52,7 +52,7 @@ cCardStack::cCardStack(int X, int Y, boo
+ 	mX = X;
+ 	mY = Y;
+ 	mStacked = Stacked;
+-	mSeed = time_ms();
++	mSeed = cTimeMs::Now();
+ }
+ 
+ cCardStack::~cCardStack() {
