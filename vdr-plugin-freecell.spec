@@ -2,7 +2,7 @@
 %define plugin	freecell
 %define name	vdr-plugin-%plugin
 %define version	0.0.2
-%define rel	19
+%define rel	20
 
 Summary:	VDR plugin: The well-known card game
 Name:		%name
@@ -16,7 +16,6 @@ Patch0:		vdr-cardgames-0.0.2-to-gcc3.4.diff
 Patch1:		vdr-freecell-0.0.2-time.patch
 Patch2:		93_freecell-0.0.2-1.5.4.dpatch
 Patch3:		freecell-0.0.2-i18n-1.6.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
@@ -36,8 +35,6 @@ This Freecell plugin is an implementation of the (well-known) card game
 %vdr_plugin_build
 
 %install
-rm -rf %{buildroot}
-
 %vdr_plugin_install
 
 install -d -m755 %{buildroot}%{_vdr_plugin_datadir}/%{plugin}
@@ -45,14 +42,6 @@ install -d -m755 %{buildroot}%{_vdr_plugin_cfgdir}
 install -m644 freecell/* %{buildroot}%{_vdr_plugin_datadir}/%{plugin}
 ln -s %{_vdr_plugin_datadir}/%{plugin} 	%{buildroot}%{_vdr_plugin_cfgdir}/freecell
 
-%clean
-rm -rf %{buildroot}
-
-%post
-%vdr_plugin_post %plugin
-
-%postun
-%vdr_plugin_postun %plugin
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
