@@ -1,4 +1,3 @@
-
 %define plugin	freecell
 
 Summary:	VDR plugin: The well-known card game
@@ -34,16 +33,16 @@ This Freecell plugin is an implementation of the (well-known) card game
 %install
 %vdr_plugin_install
 
-install -d -m755 %{buildroot}%{_vdr_plugin_datadir}/%{plugin}
-install -d -m755 %{buildroot}%{_vdr_plugin_cfgdir}
-install -m644 freecell/* %{buildroot}%{_vdr_plugin_datadir}/%{plugin}
-ln -s %{_vdr_plugin_datadir}/%{plugin} 	%{buildroot}%{_vdr_plugin_cfgdir}/freecell
+install -d -m755 %{buildroot}%{vdr_plugin_datadir}/%{plugin}
+install -d -m755 %{buildroot}%{vdr_plugin_cfgdir}
+install -m644 freecell/* %{buildroot}%{vdr_plugin_datadir}/%{plugin}
+ln -s %{vdr_plugin_datadir}/%{plugin} 	%{buildroot}%{vdr_plugin_cfgdir}/freecell
 
 
 %files -f %plugin.vdr
 %doc README COPYING HISTORY CONTRIBUTORS
-%{_vdr_plugin_cfgdir}/freecell
-%{_vdr_plugin_datadir}/%{plugin}
+%{vdr_plugin_cfgdir}/freecell
+%{vdr_plugin_datadir}/%{plugin}
 
 
 
