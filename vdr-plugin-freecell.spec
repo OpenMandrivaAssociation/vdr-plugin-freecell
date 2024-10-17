@@ -6,7 +6,7 @@ Version:	0.0.2
 Release:	22
 Group:		Video
 License:	GPL+
-URL:		http://www.magoa.net/linux/index.php?view=freecell
+URL:		https://www.magoa.net/linux/index.php?view=freecell
 Source:		http://www.magoa.net/linux/files/vdr-%plugin-%{version}.tar.bz2
 Patch0:		vdr-cardgames-0.0.2-to-gcc3.4.diff
 Patch1:		vdr-freecell-0.0.2-time.patch
